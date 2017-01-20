@@ -4,8 +4,23 @@ public class Zipper {
 
     // Deben asumir que first y second no son null
     public static int[] zipper(int[] first, int[] second) {
-        // su codigo aqui
-        return new int[1];
+        //declare empty array
+        int newsize = first.length + second.length;
+    	int[] newarr = new int[newsize];
+
+    	//fill array in disorder 
+    	//FIRST
+		for (int pos=0; pos<first.length; pos++){
+			newarr[pos] = first[pos];
+		}
+		//SECOND
+		int initiate = first.length;
+		for (int aux=0; aux<second.length; aux++) {
+			newarr[initiate] = second[aux];
+			initiate++;
+		}
+		Arrays.sort(newarr);
+        return newarr;
     }
 
     // NO MODIFICAR A PARTIR DE AQUI
