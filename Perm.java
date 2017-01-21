@@ -2,8 +2,18 @@ public class Perm {
 
     // Asuma que todos los parametros son validos
     public static String permutation(String message, int spaces) {
-        // Su codigo aqui
-        return "";
+        String result = "";
+        int pivote = 0;
+        if (spaces==26) {
+            return message;
+        } else if (spaces>26){
+            spaces=spaces-26;
+        }
+            for (int i = 0; i<message.length();i++){
+                result = result.concat(  String.valueOf  ( (char) (((int)message.charAt(i)) + spaces)  ) );
+               
+            }
+        return result;
     }
 
     // NO MODIFICAR A PARTIR DE AQUI
